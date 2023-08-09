@@ -1,0 +1,73 @@
+const TIER = [
+  {
+    name: 'Basic',
+    price: 'Rp.150.000',
+    discountedPrice: 'Rp.100.000',
+    features: [
+      {
+        name: 'Mencatat barang masuk',
+        heighlight: false,
+      },
+      {
+        name: 'Mencatat barang keluar',
+        heighlight: false,
+      },
+      {
+        name: 'Mencatat Keuntungan',
+        heighlight: false,
+      },
+    ],
+  },
+  {
+    name: 'Business',
+    price: 'Rp.300.000',
+    discountedPrice: 'Rp.120.000',
+    features: [
+      {
+        name: 'Semua fitur Basic',
+        heighlight: true,
+      },
+      {
+        name: 'Dapat menganalisa hasil penjualan dengan CHART',
+        heighlight: false,
+      },
+      {
+        name: 'Support 7x24 Jam',
+        heighlight: false,
+      },
+      {
+        name: 'Export data ke Excel',
+        heighlight: false,
+      },
+      {
+        name: 'AI Prediksi penghasilan',
+        heighlight: false,
+      }
+    ],
+  },
+  {
+    name: 'Entrepreneur',
+    price: 'Rp.1000.0000',
+    discountedPrice: 'Rp.499.000',
+    features: [
+      {
+        name: 'Semua fitur Business',
+        heighlight: true,
+      },,
+      {
+        name: 'Support 7x24 Jam',
+        heighlight: false,
+      },
+      {
+        name: 'Export data ke Excel',
+        heighlight: false,
+      },
+      {
+        name: 'AI Prediksi penghasilan',
+        heighlight: false,
+      }
+    ],
+  }
+]
+
+export default TIER
