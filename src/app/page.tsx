@@ -6,19 +6,19 @@ export default function Home() {
       <header className="bg-white min-h-screen header-bg">
         <nav className="w-full max-w-7xl m-auto">
           <ul className="flex py-4 pt-10 gap-16 items-center font-black text-xl">
-            <li className="flex-1 text-white">
+            <li className="flex-1 text-white hover:cursor-pointer hover:text-gray-200">
               <div className="flex gap-4">
                 <Image src='/imgs/coffee.svg' alt="logo" width={0} height={0} className="w-10" />
                 <span>HOME</span>
               </div>
             </li>
-            <li>
+            <li className="hover:text-blue-600 hover:cursor-pointer">
               ABOUT
             </li>
-            <li>
+            <li className="hover:text-blue-600 hover:cursor-pointer">
               PRICING
             </li>
-            <li>
+            <li className="hover:text-blue-600 hover:cursor-pointer">
               CONTACT
             </li>
             <li>
@@ -38,7 +38,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="p-4 mt font-medium text-lg space-y-3">
+          <div className="p-4 font-medium text-lg space-y-3">
             <div>
               <p>Zentory membantu kami grow lebih cepat</p>
               <p>Karena pencatatan asset sangat rapi dan mudah!</p>
@@ -55,36 +55,94 @@ export default function Home() {
         </div>
       </header>
       {/* about */}
-      <section>
-        <div className="h-[792px] py-24 relative">
-          <div className="max-w-7xl m-auto bg-red-300 w-full z-20 text-white h-[600px] about-bg">
-            ABOUT US
+      <section className="bg-white py-10">
+        <div className="max-w-5xl m-auto">
+          <div className="grid grid-cols-2">
+            <div className="flex justify-center">
+              <Image
+                src='/imgs/app.svg'
+                alt=''
+                width={0}
+                height={0}
+                className='w-[480px]'
+              />
+            </div>
+            <div className="space-y-6 p-4">
+              <h2 className="text-5xl font-extrabold">About Us</h2>
+              <article className="text-lg font-normal">
+                <p>Kami adalah tim yang bersemangat dalam menciptakan solusi modern bagi para pengusaha. Dengan komitmen untuk mempermudah dan meningkatkan efisiensi bisnis, maka izinkan kami mempersembahkan platform inovatif #Zentotory untuk Anda dan para pelaku UMKM Indonesia.</p>
+              </article>
+              <button className="bg-white border-2 border-cyan-600 rounded-lg text-cyan-600 px-10 py-2.5 text-base font-semibold">
+                SELENGKAPNYA
+              </button>
+            </div>
           </div>
         </div>
       </section>
       {/* tier ans price */}
-      <section className="bg-yellow-100">
-        <div className="max-w-7xl m-auto">
-          <h2>Think what you need to do!</h2>
-          <div>
-            <p>Kami tahu, setiap bisnis punya x sendiri, oleh karena itu kami menyediakan beberapa tier yang bisa kamu pilih</p>
-          </div>
-          <div className="grid grid-cols-3 gap-12 ">
+      <section className="bg-gray-50 py-10">
+        <div className="max-w-5xl m-auto p-4 space-y-6">
+          <h2 className="text-4xl font-extrabold text-center">Pay as You Needed</h2>
+          <article className="text-lg font-normal text-center px-20">
+            <p>Kami tahu, setiap bisnis punya keinginannya sendiri untuk berkambang, oleh karena itu kami menyediakan beberapa Tier yang bisa Kamu pilih sendiri!</p>
+          </article>
+          <div className="grid grid-cols-3 gap-8 pt-6">
             {
               [... new Array(3)].map((_v, index) => (
-                <div key={index} className="bg-white rounded-xl min-h-[280px] shadow-md">CARD</div>
+                <div key={index} className="w-full bg-white p-4 py-6 space-y-4 rounded-xl shadow-md">
+                  <div className="flex justify-center items-end">icon</div>
+                  <div>
+                    <ul className="space-y-1.5 text-sm">
+                      <li>List 1</li>
+                      <li>List 2</li>
+                      <li>List 3</li>
+                      <li>List 3</li>
+                      <li>List 3</li>
+                      <li>List 3</li>
+                    </ul>
+                  </div>
+                  <div className="flex justify-center bg-blue-200">
+                    <button className="bg-white border-2 border-cyan-600 w-full rounded-lg text-cyan-600 px-10 py-2 text-sm font-semibold">
+                      BOOK NOW
+                    </button>
+                  </div>
+                </div>
               ))
             }
           </div>
         </div>
       </section>
       {/* tier ans price */}
-      <section>
-        <div className="max-w-7xl m-auto">
-          <h2>Do You Have Question</h2>
+      <section className="bg-white py-10">
+        <div className="max-w-5xl m-auto">
+          <div className="grid grid-cols-2">
+            <div className="flex justify-center">
+              <Image
+                src='/imgs/cs.svg'
+                alt=''
+                width={0}
+                height={0}
+                className='w-[480px]'
+              />
+            </div>
+            <div className="space-y-4 p-4">
+              <h2 className="text-4xl font-extrabold">Contact Us</h2>
+              <article className="text-lg font-normal">
+                <p>Jangan ragu untuk bertanya apapun, Costumer Care Kami siap membantu.</p>
+              </article>
+              <form className="grid">
+                <input type="text" name="name" />
+                <input type="text" name="email" />
+                <textarea></textarea>
+                <button className="bg-white border-2 border-cyan-600 rounded-lg text-cyan-600 px-10 py-2 w-fit text-base font-semibold">
+                  KIRIM
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
-      <footer className="bg-pink-200">
+      <footer className="bg-blue-900 h-36">
         <p>o</p>
       </footer>
     </main>
