@@ -28,21 +28,13 @@ const TIER = [
         heighlight: true,
       },
       {
-        name: 'Dapat menganalisa hasil penjualan dengan CHART',
+        name: 'Analisa penjualan dengan CHART',
         heighlight: false,
       },
       {
         name: 'Support 7x24 Jam',
         heighlight: false,
       },
-      {
-        name: 'Export data ke Excel',
-        heighlight: false,
-      },
-      {
-        name: 'AI Prediksi penghasilan',
-        heighlight: false,
-      }
     ],
   },
   {
@@ -53,10 +45,6 @@ const TIER = [
       {
         name: 'Semua fitur Business',
         heighlight: true,
-      },,
-      {
-        name: 'Support 7x24 Jam',
-        heighlight: false,
       },
       {
         name: 'Export data ke Excel',
