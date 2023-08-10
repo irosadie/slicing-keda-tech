@@ -1,4 +1,5 @@
 import { FC, InputHTMLAttributes } from "react"
+import styles from "./text-input.module.scss"
 
 export type TextInputProps = InputHTMLAttributes<HTMLInputElement>
 
@@ -6,14 +7,14 @@ const generateTextInput = (props: TextInputProps) => {
 
   const { children, className: cn, ...rest } = props
 
-  let className = 'bg-gray-100 rounded-md py-2 px-4 border border-gray-400 placeholder:text-gray-500 outline-none'
+  let className = [styles.input]
 
   if (cn) {
-    className += ` ${cn}`
+    className.push(cn)
   }
 
   return (
-    <input className={className} {...rest}>
+    <input className={className.join(' ')} {...rest}>
       {children}
     </input>
   )
