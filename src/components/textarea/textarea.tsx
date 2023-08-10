@@ -1,4 +1,5 @@
 import { FC, TextareaHTMLAttributes } from "react"
+import styles from "./textarea.module.scss"
 
 export type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement>
 
@@ -6,14 +7,14 @@ const generateTextArea = (props: TextAreaProps) => {
 
   const { children, className: cn, ...rest } = props
 
-  let className = 'bg-gray-100 rounded-md py-2 px-4 border border-gray-400 placeholder:text-gray-500 outline-none'
+  let className = [styles.textarea]
 
   if (cn) {
-    className += ` ${cn}`
+    className.push(cn)
   }
 
   return (
-    <textarea className={className} {...rest}>
+    <textarea className={className.join(' ')} {...rest}>
       {children}
     </textarea>
   )
