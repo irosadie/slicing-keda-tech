@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes, FC, ReactNode } from "react"
+import styles from "./button.module.scss"
 
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,22 +13,22 @@ const generateButton = (props: ButtonProps) => {
 
   const { children, filled, dimension = 'normal', className: cn, ...rest } = props
 
-  let className = 'bg-white border-2 border-cyan-600 w-fit rounded-lg text-cyan-600 px-10 py-2 text-sm font-semibold hover:bg-cyan-600 hover:text-white'
+  let className = [styles.default]
 
   if (filled) {
-    className += ' w-full'
+    className.push(styles.filled)
   }
 
   if (dimension === 'bigger') {
-    className += ' py-2.5'
+    className.push(styles.d_bigger)
   }
 
   if (cn) {
-    className += ` ${cn}`
+    className.push(cn)
   }
 
   return (
-    <button className={className} {...rest}>
+    <button className={className.join(' ')} {...rest}>
       {children}
     </button>
   )

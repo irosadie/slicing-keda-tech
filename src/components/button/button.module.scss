@@ -1,0 +1,15 @@
+button.default{
+  @apply bg-white border-2 border-cyan-600 w-fit rounded-lg text-cyan-600 px-10 py-2 text-sm font-semibold;
+
+  :hover{
+    @apply bg-cyan-600 text-white;
+  }
+
+  &.d_bigger{
+    @apply py-2.5;
+  }
+
+  &.filled {
+    @apply w-full;
+  }
+}
