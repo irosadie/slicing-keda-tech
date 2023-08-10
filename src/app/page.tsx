@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from "$/components/button";
 import { Card } from "$/components/card";
 import { Footer } from "$/components/footer";
@@ -10,6 +12,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
+
+  const handleMenuClick = (id: string) => {
+    const el = document.querySelector(id) as HTMLElement;
+
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
+
+  }
+
   return (
     <main>
       <header className="laptop:min-h-screen header-bg">
@@ -30,13 +42,13 @@ export default function Home() {
               </div>
             </li>
             <li className="hover:text-blue-600 hover:cursor-pointer">
-              ABOUT
+              <span onClick={() => handleMenuClick('#about')}>ABOUT</span>
             </li>
             <li className="hover:text-blue-600 hover:cursor-pointer">
-              PRICING
+              <span onClick={() => handleMenuClick('#pricing')}>PRICING</span>
             </li>
             <li className="hover:text-blue-600 hover:cursor-pointer">
-              CONTACT
+              <span onClick={() => handleMenuClick('#contact')}>CONTACT</span>
             </li>
             <li>
               <Link href="/login">
@@ -68,7 +80,7 @@ export default function Home() {
         </div>
       </header>
       {/* about */}
-      <section className="bg-white tablet:py-10">
+      <section className="bg-white tablet:py-10" id="about">
         <div className="max-w-5xl m-auto tablet:px-4">
           <div className="grid tablet:grid-cols-2">
             <div className="flex justify-center bg-gray-300 tablet:bg-transparent">
@@ -85,7 +97,10 @@ export default function Home() {
               <article className="laptop:text-lg font-normal">
                 <p>Kami adalah tim yang bersemangat dalam menciptakan solusi modern bagi para pengusaha. Dengan komitmen untuk mempermudah dan meningkatkan efisiensi bisnis, maka izinkan Kami mempersembahkan platform inovatif #Zentotory untuk Anda dan para pelaku UMKM Indonesia.</p>
               </article>
-              <Button dimension="bigger">
+              <Button
+                dimension="bigger"
+                className="cursor-not-allowed"
+              >
                 SELENGKAPNYA
               </Button>
             </div>
@@ -93,7 +108,7 @@ export default function Home() {
         </div>
       </section>
       {/* tier ans price */}
-      <section className="bg-gray-50 py-3 tablet:py-10">
+      <section className="bg-gray-50 py-3 tablet:py-10" id="pricing">
         <div className="max-w-5xl m-auto p-4 space-y-6">
           <h2 className="text-2xl tablet:text-4xl font-extrabold text-center">Pay as You Needed</h2>
           <article className="text-sm tablet:text-lg font-normal text-center tablet:px-20">
@@ -127,7 +142,7 @@ export default function Home() {
                     </ul>
                   </div>
                   <div className="flex justify-center">
-                    <Button filled>BOOK NOW</Button>
+                    <Button filled className="cursor-not-allowed">BOOK NOW</Button>
                   </div>
                 </Card>
               ))
@@ -135,8 +150,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* tier ans price */}
-      <section className="bg-white py-3 tablet:py-10">
+      {/* contact */}
+      <section className="bg-white py-3 tablet:py-10" id="contact">
         <div className="max-w-5xl m-auto">
           <div className="grid tablet:grid-cols-2">
             <div className="flex justify-center">
@@ -150,7 +165,7 @@ export default function Home() {
             </div>
             <div className="space-y-6 p-4">
               <h2 className="text-2xl tablet:text-4xl font-extrabold">Contact Us</h2>
-              <form className="grid space-y-6">
+              <form method="POST" className="grid space-y-6">
                 <TextInput
                   placeholder="your name"
                   type="text"
@@ -166,9 +181,12 @@ export default function Home() {
                   className="bg-gray-100 rounded-md py-2 px-4 border border-gray-400 placeholder:text-gray-500 outline-none"
                 ></textarea>
                 <div className="flex justify-end">
-                  <button className="bg-white border-2 border-cyan-600 rounded-lg text-cyan-600 px-10 py-2 w-fit text-base font-semibold">
+                  <Button
+                    type="button"
+                    className="cursor-not-allowed"
+                  >
                     KIRIM
-                  </button>
+                  </Button>
                 </div>
               </form>
             </div>
