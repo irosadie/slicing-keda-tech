@@ -1,4 +1,5 @@
 import { FC, HTMLAttributes, ReactNode } from "react"
+import styles from './card.module.scss'
 
 export interface CardProps
   extends HTMLAttributes<HTMLElement> {
@@ -9,14 +10,14 @@ const generateCard = (props: CardProps) => {
 
   const { children, className: cn, ...rest } = props
 
-  let className = 'w-full bg-white p-4 py-6 space-y-4 rounded-xl shadow hover:shadow-md'
+  let className = [styles.card]
 
   if (cn) {
-    className += ` ${cn}`
+    className.push(cn)
   }
 
   return (
-    <div className={className} {...rest}>
+    <div className={className.join(' ')} {...rest}>
       {children}
     </div>
   )

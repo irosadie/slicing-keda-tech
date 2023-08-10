@@ -1,0 +1,7 @@
+div.card{
+  @apply w-full bg-white p-4 py-6 space-y-4 rounded-xl shadow;
+
+  &:hover{
+    @apply shadow-md;
+  }
+}

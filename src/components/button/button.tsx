@@ -13,7 +13,7 @@ const generateButton = (props: ButtonProps) => {
 
   const { children, filled, dimension = 'normal', className: cn, ...rest } = props
 
-  let className = [styles.default]
+  let className = [styles.button]
 
   if (filled) {
     className.push(styles.filled)
