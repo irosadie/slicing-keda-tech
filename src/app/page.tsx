@@ -1,3 +1,5 @@
+import { Button } from "$/components/button";
+import { Footer } from "$/components/footer";
 import { LeaftIcon } from "$/components/icons";
 import CubeIcon from "$/components/icons/cube";
 import PowIcon from "$/components/icons/pow";
@@ -7,9 +9,13 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main>
-      <header className="bg-white h-[50%] laptop:min-h-screen header-bg">
-        <nav className="w-full max-w-7xl m-auto tablet:px-4">
-          <ul className="hidden tablet:flex py-4 pt-10 gap-16 items-center font-black text-xl">
+      <header className="laptop:min-h-screen header-bg">
+        <nav className="w-full max-w-7xl m-auto tablet:px-4 bg-white tablet:bg-transparent z-50 fixed tablet:static top-0 shadow tablet:shadow-none px-4">
+          <ul className="flex justify-between items-center tablet:hidden py-4 font-black text-xl">
+            <li className="flex-1 hover:cursor-pointer hover:text-gray-200">HOME</li>
+            <li><Button>LOGIN</Button></li>
+          </ul>
+          <ul className="tablet:flex py-4 tablet:pt-10 gap-2 tablet:gap-16 items-center font-black text-xl hidden">
             <li className="flex-1 text-white hover:cursor-pointer hover:text-gray-200">
               <div className="flex gap-4">
                 <Image src='/imgs/coffee.svg' alt="logo" width={0} height={0} className="w-10" />
@@ -26,13 +32,13 @@ export default function Home() {
               CONTACT
             </li>
             <li>
-              <button className="bg-white border-2 border-cyan-600 rounded-lg text-cyan-600 px-10 py-2 text-sm font-semibold">LOGIN</button>
+              <Button>LOGIN</Button>
             </li>
           </ul>
         </nav>
-        <div className="max-w-5xl tablet:px-4 m-auto relative min-h-[590px] tablet:space-y-10">
+        <div className="max-w-5xl tablet:px-4 m-auto relative tablet:min-h-[590px] tablet:space-y-10">
           <div>
-            <div className="text-start mt-24 space-y-5 p-4">
+            <div className="text-start mt-20 tablet:mt-24 space-y-5 p-4">
               <h1 className="text-5xl tablet:text-7xl font-extrabold">
                 <span className="text-blue-600">#Zen</span><span className="text-purple-500">tory</span>
               </h1>
@@ -53,7 +59,7 @@ export default function Home() {
         </div>
       </header>
       {/* about */}
-      <section className="bg-white py-3 tablet:py-10">
+      <section className="bg-white tablet:py-10">
         <div className="max-w-5xl m-auto tablet:px-4">
           <div className="grid tablet:grid-cols-2">
             <div className="flex justify-center bg-gray-300 tablet:bg-transparent">
@@ -62,17 +68,17 @@ export default function Home() {
                 alt=''
                 width={0}
                 height={0}
-                className='w-[280px] py-12 tablet:w-[480px]'
+                className='w-[280px] py-12 tablet:w-[380px] laptop:w-[480px]'
               />
             </div>
             <div className="space-y-6 p-4 mt-2">
-              <h2 className="text-3xl tablet:text-5xl font-extrabold">About Us</h2>
-              <article className="tablet:text-lg font-normal">
+              <h2 className="text-3xl tablet:text-4xl laptop:text-5xl font-extrabold">About Us</h2>
+              <article className="laptop:text-lg font-normal">
                 <p>Kami adalah tim yang bersemangat dalam menciptakan solusi modern bagi para pengusaha. Dengan komitmen untuk mempermudah dan meningkatkan efisiensi bisnis, maka izinkan Kami mempersembahkan platform inovatif #Zentotory untuk Anda dan para pelaku UMKM Indonesia.</p>
               </article>
-              <button className="bg-white border-2 border-cyan-600 rounded-lg text-cyan-600 px-10 py-2.5 text-base font-semibold">
+              <Button dimension="bigger">
                 SELENGKAPNYA
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -96,8 +102,8 @@ export default function Home() {
                     }[index]}
                   </div>
                   <h3 className="font-bold text-center text-lg">{value.name}</h3>
-                  <div>
-                    <ul className="space-y-1.5 text-sm">
+                  <div className="pt-4">
+                    <ul className="space-y-1.5 text-sm tablet:text-center laptop:text-start">
                       {
                         value.features.map((item, index) => {
                           return <li className={item?.heighlight ? 'font-semibold' : undefined} key={index}>{item?.name}</li>
@@ -105,10 +111,14 @@ export default function Home() {
                       }
                     </ul>
                   </div>
+                  <div className="pt-4">
+                    <ul className="flex justify-between tablet:justify-center tablet:grid laptop:justify-between laptop:flex">
+                      <li><s>{value.price}</s></li>
+                      <li className="font-bold">{value.discountedPrice}</li>
+                    </ul>
+                  </div>
                   <div className="flex justify-center">
-                    <button className="bg-white border-2 border-cyan-600 w-full rounded-lg text-cyan-600 px-10 py-2 text-sm font-semibold">
-                      BOOK NOW
-                    </button>
+                    <Button filled>BOOK NOW</Button>
                   </div>
                 </div>
               ))
@@ -129,7 +139,7 @@ export default function Home() {
                 className='hidden tablet:block tablet:w-[580px]'
               />
             </div>
-            <div className="space-y-6 p-4 px-8">
+            <div className="space-y-6 p-4">
               <h2 className="text-2xl tablet:text-4xl font-extrabold">Contact Us</h2>
               <form className="grid space-y-6">
                 <input
@@ -158,13 +168,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <footer className="bg-blue-900">
-        <div className="py-4 tablet:p-4 max-w-5xl m-auto text-white">
-          <ul className="flex gap-10">
-            <li className="text-xs tablet:text-base flex-1 text-center tablet:text-end">&copy; 2023 by www.zentory.com | All Reserved</li>
-          </ul>
-        </div>
-      </footer>
+      <Footer>&nbsp; 2023 by www.zentory.com | All Reserved</Footer>
     </main>
   )
 }

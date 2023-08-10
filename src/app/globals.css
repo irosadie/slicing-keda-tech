@@ -14,9 +14,21 @@ body {
   color: #424242;
 }
 
-.header-bg{
-  background-image: url('/imgs/left-top.svg'), url('/imgs/app.svg'), url('/imgs/report.svg'), url('/imgs/bot-right.svg');
-  background-position: left top, 82% 32%, 16% bottom, right bottom;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-size: 24%, 20%, 23%, 50%;
+@media (min-width: 1024px) {
+  .header-bg {
+      background-image: url('/imgs/left-top.svg'), url('/imgs/app.svg'), url('/imgs/report.svg'), url('/imgs/bot-right.svg');
+      background-position: left top, 82% 32%, 16% bottom, right bottom;
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-size: 24%, 20%, 23%, 50%;
+    }
 }
+
+@media (min-width: 640px) {
+  .header-bg {
+    background-image: url('/imgs/left-top.svg'), url('/imgs/report.svg'), url('/imgs/bot-right.svg');
+    background-position: left top, 6% bottom, right bottom;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 24%, 40%, 52%;
+  }
+}
+
