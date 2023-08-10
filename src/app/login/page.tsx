@@ -6,7 +6,7 @@ import Link from "next/link"
 
 const Login = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen max-w-lg m-auto">
+    <div className="flex justify-center items-center min-h-screen max-w-lg m-auto px-4">
       <Card className="px-6">
         <div className="flex justify-center items-center py-4">
           <div className="scale-150">
