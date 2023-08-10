@@ -1,21 +1,22 @@
 'use client'
 
-import { Button } from "$/components/button";
-import { Card } from "$/components/card";
-import { Footer } from "$/components/footer";
-import { CheckCircle, LeaftIcon } from "$/components/icons";
-import { CubeIcon, PowIcon } from "$/components/icons";
-import { Main } from "$/components/main";
-import { TextInput } from "$/components/text-input";
-import { TextArea } from "$/components/textarea";
-import { TIER } from "$/constants";
-import Image from "next/image";
-import Link from "next/link";
+import { Button } from "$/components/button"
+import { Card } from "$/components/card"
+import { Footer } from "$/components/footer"
+import { Form } from "$/components/form"
+import { CheckCircle, LeaftIcon } from "$/components/icons"
+import { CubeIcon, PowIcon } from "$/components/icons"
+import { Main } from "$/components/main"
+import { TextInput } from "$/components/text-input"
+import { TextArea } from "$/components/textarea"
+import { TIER } from "$/constants"
+import Image from "next/image"
+import Link from "next/link"
 
 export default function Home() {
 
   const handleMenuClick = (id: string) => {
-    const el = document.querySelector(id) as HTMLElement;
+    const el = document.querySelector(id) as HTMLElement
 
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' })
@@ -108,6 +109,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* about */}
 
       {/* tier ans price */}
       <section className="bg-gray-50 py-3 tablet:py-10" id="pricing">
@@ -155,6 +157,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* tier ans end */}
 
       {/* contact */}
       <section className="bg-white py-3 tablet:py-10" id="contact">
@@ -171,7 +174,7 @@ export default function Home() {
             </div>
             <div className="space-y-6 p-4">
               <h2 className="text-2xl tablet:text-4xl font-extrabold">Contact Us</h2>
-              <form method="POST" className="grid space-y-6">
+              <Form method="POST">
                 <TextInput
                   placeholder="your name"
                   type="text"
@@ -191,12 +194,14 @@ export default function Home() {
                     KIRIM
                   </Button>
                 </div>
-              </form>
+              </Form>
             </div>
           </div>
         </div>
       </section>
-      <Footer>&nbsp; 2023 by www.zentory.com | All Reserved</Footer>
+      {/* contact end */}
+
+      <Footer>&nbsp 2023 by www.zentory.com | All Reserved</Footer>
     </Main>
   )
 }

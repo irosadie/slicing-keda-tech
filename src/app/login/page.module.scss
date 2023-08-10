@@ -1,0 +1,24 @@
+div.wrapper{
+  @apply flex justify-center items-center min-h-screen max-w-lg m-auto px-4;
+
+  .card{
+    @apply px-6;
+
+    .icon_wrapper{
+      @apply flex justify-center items-center py-4;
+    }
+
+    .icon_rescale{
+      @apply scale-150;
+    }
+
+    .back_wrapper{
+      @apply flex justify-end pt-6;
+
+      .link{
+        @apply text-blue-600 hover:text-blue-800;
+      }
+    }
+  }
+
+}

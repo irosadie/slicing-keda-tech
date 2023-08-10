@@ -24,8 +24,8 @@ const generateCard = (props: CardProps) => {
 }
 
 const Card: FC<CardProps> = (props) => {
-  const cardElement = generateCard(props);
-  return cardElement;
-};
+  const cardElement = generateCard(props)
+  return cardElement
+}
 
 export default Card

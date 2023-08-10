@@ -11,8 +11,8 @@ const generateTextInput = (props: MainProps) => {
 }
 
 const Main: FC<MainProps> = (props) => {
-  const textInputElement = generateTextInput(props);
-  return textInputElement;
-};
+  const textInputElement = generateTextInput(props)
+  return textInputElement
+}
 
 export default Main
