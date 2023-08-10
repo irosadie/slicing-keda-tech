@@ -5,6 +5,7 @@ import { Card } from "$/components/card";
 import { Footer } from "$/components/footer";
 import { LeaftIcon } from "$/components/icons";
 import { CubeIcon, PowIcon } from "$/components/icons";
+import { Main } from "$/components/main";
 import { TextInput } from "$/components/text-input";
 import { TextArea } from "$/components/textarea";
 import { TIER } from "$/constants";
@@ -23,7 +24,7 @@ export default function Home() {
   }
 
   return (
-    <main>
+    <Main>
       <header className="laptop:min-h-screen header-bg">
         <nav className="w-full max-w-7xl m-auto tablet:px-4 bg-white tablet:bg-transparent z-50 fixed tablet:static top-0 shadow tablet:shadow-none px-4">
           <ul className="flex justify-between items-center tablet:hidden py-4 font-black text-xl">
@@ -193,6 +194,6 @@ export default function Home() {
         </div>
       </section>
       <Footer>&nbsp; 2023 by www.zentory.com | All Reserved</Footer>
-    </main>
+    </Main>
   )
 }
