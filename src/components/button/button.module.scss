@@ -1,7 +1,7 @@
-button.default{
+button.button{
   @apply bg-white border-2 border-cyan-600 w-fit rounded-lg text-cyan-600 px-10 py-2 text-sm font-semibold;
 
-  :hover{
+  &:hover{
     @apply bg-cyan-600 text-white;
   }
 
