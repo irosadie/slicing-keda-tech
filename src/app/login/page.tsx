@@ -17,8 +17,18 @@ const Login = () => {
           method="POST"
           className="grid space-y-8"
         >
-          <TextInput name="email" type="email" placeholder="your@email.com" />
-          <TextInput name="password" type="password" placeholder="your password" />
+          <TextInput
+            name="email"
+            type="email"
+            placeholder="your@email.com"
+            required
+          />
+          <TextInput
+            name="password"
+            type="password"
+            placeholder="your password"
+            required
+          />
           <Button
             dimension="bigger"
             filled type="button"
