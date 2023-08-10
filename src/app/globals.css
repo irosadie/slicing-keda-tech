@@ -23,7 +23,7 @@ body {
     }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 640px) and (max-width: 1023px) {
   .header-bg {
     background-image: url('/imgs/left-top.svg'), url('/imgs/report.svg'), url('/imgs/bot-right.svg');
     background-position: left top, 6% bottom, right bottom;
