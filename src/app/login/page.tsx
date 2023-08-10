@@ -1,6 +1,6 @@
 import { Button } from "$/components/button"
 import { Card } from "$/components/card"
-import PowIcon from "$/components/icons/pow"
+import { PowIcon } from "$/components/icons"
 import { TextInput } from "$/components/text-input"
 import Link from "next/link"
 
