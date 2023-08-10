@@ -1,10 +1,13 @@
 import { Button } from "$/components/button";
+import { Card } from "$/components/card";
 import { Footer } from "$/components/footer";
 import { LeaftIcon } from "$/components/icons";
 import CubeIcon from "$/components/icons/cube";
 import PowIcon from "$/components/icons/pow";
+import { TextInput } from "$/components/text-input";
 import { TIER } from "$/constants";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -13,7 +16,11 @@ export default function Home() {
         <nav className="w-full max-w-7xl m-auto tablet:px-4 bg-white tablet:bg-transparent z-50 fixed tablet:static top-0 shadow tablet:shadow-none px-4">
           <ul className="flex justify-between items-center tablet:hidden py-4 font-black text-xl">
             <li className="flex-1 hover:cursor-pointer hover:text-gray-200">HOME</li>
-            <li><Button>LOGIN</Button></li>
+            <li>
+              <Link href="/login">
+                <Button>LOGIN</Button>
+              </Link>
+            </li>
           </ul>
           <ul className="tablet:flex py-4 tablet:pt-10 gap-2 tablet:gap-16 items-center font-black text-xl hidden">
             <li className="flex-1 text-white hover:cursor-pointer hover:text-gray-200">
@@ -32,7 +39,9 @@ export default function Home() {
               CONTACT
             </li>
             <li>
-              <Button>LOGIN</Button>
+              <Link href="/login">
+                <Button>LOGIN</Button>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -93,7 +102,7 @@ export default function Home() {
           <div className="grid tablet:grid-cols-3 gap-8 tablet:pt-6">
             {
               TIER.map((value, index) => (
-                <div key={index} className="w-full bg-white p-4 py-6 space-y-4 rounded-xl shadow hover:shadow-md">
+                <Card key={index}>
                   <div className="flex justify-center items-end">
                     {{
                       0: <LeaftIcon />,
@@ -120,7 +129,7 @@ export default function Home() {
                   <div className="flex justify-center">
                     <Button filled>BOOK NOW</Button>
                   </div>
-                </div>
+                </Card>
               ))
             }
           </div>
@@ -142,17 +151,15 @@ export default function Home() {
             <div className="space-y-6 p-4">
               <h2 className="text-2xl tablet:text-4xl font-extrabold">Contact Us</h2>
               <form className="grid space-y-6">
-                <input
+                <TextInput
                   placeholder="your name"
                   type="text"
                   name="name"
-                  className="bg-gray-100 rounded-md py-2 px-4 border border-gray-400 placeholder:text-gray-500 outline-none"
                 />
-                <input
+                <TextInput
                   placeholder="your@email.com"
                   type="email"
                   name="email"
-                  className="bg-gray-100 rounded-md py-2 px-4 border border-gray-400 placeholder:text-gray-500 outline-none"
                 />
                 <textarea
                   rows={4}
