@@ -3,7 +3,7 @@
 import { Button } from "$/components/button";
 import { Card } from "$/components/card";
 import { Footer } from "$/components/footer";
-import { LeaftIcon } from "$/components/icons";
+import { CheckCircle, LeaftIcon } from "$/components/icons";
 import { CubeIcon, PowIcon } from "$/components/icons";
 import { Main } from "$/components/main";
 import { TextInput } from "$/components/text-input";
@@ -132,7 +132,10 @@ export default function Home() {
                     <ul className="space-y-1.5 text-sm tablet:text-center laptop:text-start">
                       {
                         value.features.map((item, index) => {
-                          return <li className={item?.heighlight ? 'font-semibold' : undefined} key={index}>{item?.name}</li>
+                          return <li className={item?.heighlight ? 'font-semibold flex gap-2' : 'flex gap-2'} key={index}>
+                            <CheckCircle />
+                            {item?.name}
+                          </li>
                         })
                       }
                     </ul>
@@ -140,7 +143,7 @@ export default function Home() {
                   <div className="pt-4">
                     <ul className="flex justify-between tablet:justify-center tablet:grid laptop:justify-between laptop:flex">
                       <li><s>{value.price}</s></li>
-                      <li className="font-bold">{value.discountedPrice}</li>
+                      <li className="font-bold text-green-700">{value.discountedPrice}</li>
                     </ul>
                   </div>
                   <div className="flex justify-center">
