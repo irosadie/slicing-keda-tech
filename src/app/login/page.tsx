@@ -3,20 +3,19 @@ import { Card } from "$/components/card"
 import { PowIcon } from "$/components/icons"
 import { TextInput } from "$/components/text-input"
 import Link from "next/link"
+import styles from "./page.module.scss"
+import { Form } from "$/components/form"
 
 const Login = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen max-w-lg m-auto px-4">
-      <Card className="px-6">
-        <div className="flex justify-center items-center py-4">
-          <div className="scale-150">
+    <div className={styles.wrapper}>
+      <Card className={styles.card}>
+        <div className={styles.icon_wrapper}>
+          <div className={styles.icon_rescale}>
             <PowIcon />
           </div>
         </div>
-        <form
-          method="POST"
-          className="grid space-y-8"
-        >
+        <Form method="POST" >
           <TextInput
             name="email"
             type="email"
@@ -36,9 +35,9 @@ const Login = () => {
           >
             LOGIN
           </Button>
-        </form>
-        <div className="flex justify-end pt-6">
-          <Link className="text-blue-600 hover:text-blue-800" href="/">back to home</Link>
+        </Form>
+        <div className={styles.back_wrapper}>
+          <Link className={styles.link} href="/">back to home</Link>
         </div>
       </Card>
     </div>

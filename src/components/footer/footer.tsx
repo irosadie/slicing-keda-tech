@@ -28,8 +28,8 @@ const generateFooter = (props: FooterProps) => {
 }
 
 const Footer: FC<FooterProps> = (props) => {
-  const footerElement = generateFooter(props);
-  return footerElement;
-};
+  const footerElement = generateFooter(props)
+  return footerElement
+}
 
 export default Footer

@@ -35,8 +35,8 @@ const generateButton = (props: ButtonProps) => {
 }
 
 const Button: FC<ButtonProps> = (props) => {
-  const buttonElement = generateButton(props);
-  return buttonElement;
-};
+  const buttonElement = generateButton(props)
+  return buttonElement
+}
 
 export default Button

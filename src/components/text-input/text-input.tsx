@@ -21,8 +21,8 @@ const generateTextInput = (props: TextInputProps) => {
 }
 
 const TextInput: FC<TextInputProps> = (props) => {
-  const textInputElement = generateTextInput(props);
-  return textInputElement;
-};
+  const textInputElement = generateTextInput(props)
+  return textInputElement
+}
 
 export default TextInput

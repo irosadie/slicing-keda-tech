@@ -21,8 +21,8 @@ const generateTextArea = (props: TextAreaProps) => {
 }
 
 const TextArea: FC<TextAreaProps> = (props) => {
-  const textAreaElement = generateTextArea(props);
-  return textAreaElement;
-};
+  const textAreaElement = generateTextArea(props)
+  return textAreaElement
+}
 
 export default TextArea
