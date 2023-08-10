@@ -6,6 +6,7 @@ import { Footer } from "$/components/footer";
 import { LeaftIcon } from "$/components/icons";
 import { CubeIcon, PowIcon } from "$/components/icons";
 import { TextInput } from "$/components/text-input";
+import { TextArea } from "$/components/textarea";
 import { TIER } from "$/constants";
 import Image from "next/image";
 import Link from "next/link";
@@ -75,9 +76,9 @@ export default function Home() {
             </div>
             <p className="font-bold">Upin - CEO Durian Runtuh</p>
           </div>
-
         </div>
       </header>
+
       {/* about */}
       <section className="bg-white tablet:py-10" id="about">
         <div className="max-w-5xl m-auto tablet:px-4">
@@ -106,6 +107,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* tier ans price */}
       <section className="bg-gray-50 py-3 tablet:py-10" id="pricing">
         <div className="max-w-5xl m-auto p-4 space-y-6">
@@ -149,6 +151,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* contact */}
       <section className="bg-white py-3 tablet:py-10" id="contact">
         <div className="max-w-5xl m-auto">
@@ -175,10 +178,7 @@ export default function Home() {
                   type="email"
                   name="email"
                 />
-                <textarea
-                  rows={4}
-                  className="bg-gray-100 rounded-md py-2 px-4 border border-gray-400 placeholder:text-gray-500 outline-none"
-                ></textarea>
+                <TextArea rows={4} />
                 <div className="flex justify-end">
                   <Button
                     type="button"
