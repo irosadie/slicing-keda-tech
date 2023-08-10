@@ -7,6 +7,7 @@ import { Form } from "$/components/form"
 import { CheckCircle, LeaftIcon } from "$/components/icons"
 import { CubeIcon, PowIcon } from "$/components/icons"
 import { Main } from "$/components/main"
+import { TierSection } from "$/components/section"
 import { TextInput } from "$/components/text-input"
 import { TextArea } from "$/components/textarea"
 import { TIER } from "$/constants"
@@ -111,53 +112,12 @@ export default function Home() {
       </section>
       {/* about */}
 
-      {/* tier ans price */}
-      <section className="bg-gray-50 py-3 tablet:py-10" id="pricing">
-        <div className="max-w-5xl m-auto p-4 space-y-6">
-          <h2 className="text-2xl tablet:text-4xl font-extrabold text-center">Pay as You Needed</h2>
-          <article className="text-sm tablet:text-lg font-normal text-center tablet:px-20">
-            <p>Kami tahu, setiap bisnis punya keinginannya sendiri untuk berkambang, oleh karena itu Kami menyediakan beberapa Tier yang bisa Kamu pilih sendiri!</p>
-          </article>
-          <div className="grid tablet:grid-cols-3 gap-8 tablet:pt-6">
-            {
-              TIER.map((value, index) => (
-                <Card key={index}>
-                  <div className="flex justify-center items-end">
-                    {{
-                      0: <LeaftIcon />,
-                      1: <PowIcon />,
-                      2: <CubeIcon />
-                    }[index]}
-                  </div>
-                  <h3 className="font-bold text-center text-lg">{value.name}</h3>
-                  <div className="pt-4">
-                    <ul className="space-y-1.5 text-sm tablet:text-center laptop:text-start">
-                      {
-                        value.features.map((item, index) => {
-                          return <li className={item?.heighlight ? 'font-semibold flex gap-2' : 'flex gap-2'} key={index}>
-                            <CheckCircle />
-                            {item?.name}
-                          </li>
-                        })
-                      }
-                    </ul>
-                  </div>
-                  <div className="pt-4">
-                    <ul className="flex justify-between tablet:justify-center tablet:grid laptop:justify-between laptop:flex">
-                      <li><s>{value.price}</s></li>
-                      <li className="font-bold text-green-700">{value.discountedPrice}</li>
-                    </ul>
-                  </div>
-                  <div className="flex justify-center">
-                    <Button filled className="cursor-not-allowed">BOOK NOW</Button>
-                  </div>
-                </Card>
-              ))
-            }
-          </div>
-        </div>
-      </section>
-      {/* tier ans end */}
+      <TierSection
+        id="pricing"
+        title="Pay as You Needed"
+        description="Kami tahu, setiap bisnis punya keinginannya sendiri untuk berkambang, oleh karena itu Kami menyediakan beberapa Tier yang bisa Kamu pilih sendiri!"
+        data={TIER}
+      />
 
       {/* contact */}
       <section className="bg-white py-3 tablet:py-10" id="contact">

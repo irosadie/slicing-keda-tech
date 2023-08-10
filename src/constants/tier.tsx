@@ -1,8 +1,11 @@
+import { CubeIcon, LeaftIcon, PowIcon } from "$/components/icons"
+
 const TIER = [
   {
     name: 'Basic',
     price: 'Rp.150.000',
     discountedPrice: 'Rp.100.000',
+    icon: <LeaftIcon />,
     features: [
       {
         name: 'Mencatat barang masuk',
@@ -22,6 +25,7 @@ const TIER = [
     name: 'Business',
     price: 'Rp.300.000',
     discountedPrice: 'Rp.120.000',
+    icon: <PowIcon />,
     features: [
       {
         name: 'Semua fitur Basic',
@@ -41,6 +45,7 @@ const TIER = [
     name: 'Entrepreneur',
     price: 'Rp.1000.0000',
     discountedPrice: 'Rp.499.000',
+    icon: < CubeIcon />,
     features: [
       {
         name: 'Semua fitur Business',
