@@ -1,0 +1,15 @@
+footer.footer{
+  @apply bg-blue-900;
+
+  .wrapper{
+    @apply py-4 tablet:p-4 max-w-5xl m-auto text-white;
+
+    ul{
+      @apply flex gap-10;
+
+      li{
+        @apply text-xs tablet:text-base flex-1 text-center tablet:text-end;
+      }
+    }
+  }
+}
