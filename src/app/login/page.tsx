@@ -13,10 +13,19 @@ const Login = () => {
             <PowIcon />
           </div>
         </div>
-        <form className="grid space-y-8">
+        <form
+          method="POST"
+          className="grid space-y-8"
+        >
           <TextInput name="email" type="email" placeholder="your@email.com" />
           <TextInput name="password" type="password" placeholder="your password" />
-          <Button dimension="bigger" filled>LOGIN</Button>
+          <Button
+            dimension="bigger"
+            filled type="button"
+            className="cursor-not-allowed"
+          >
+            LOGIN
+          </Button>
         </form>
         <div className="flex justify-end pt-6">
           <Link className="text-blue-600 hover:text-blue-800" href="/">back to home</Link>
