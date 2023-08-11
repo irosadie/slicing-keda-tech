@@ -1,22 +1,21 @@
 'use client'
 
-import { Button } from "$/components/button"
-import { Card } from "$/components/card"
+import { Fragment, useState } from "react"
 import { Footer } from "$/components/footer"
-import { Form } from "$/components/form"
-import { CheckCircle, LeaftIcon } from "$/components/icons"
-import { CubeIcon, PowIcon } from "$/components/icons"
 import { Main } from "$/components/main"
-import { TierSection } from "$/components/section"
-import { TextInput } from "$/components/text-input"
-import { TextArea } from "$/components/textarea"
-import { TIER } from "$/constants"
-import Image from "next/image"
-import Link from "next/link"
+import { ContactSection, TierSection, AboutSection, HeaderSection } from "$/components/section"
+import { MENU, TIER } from "$/constants"
+import { DrawerMenu } from "$/components/section"
+import 'react-modern-drawer/dist/index.css'
+
 
 export default function Home() {
 
-  const handleMenuClick = (id: string) => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const footer = "© 2023 by www.zentory.com | All Reserved";
+
+  const handleOnMenuClick = (id: string) => {
+    setIsDrawerOpen(false)
     const el = document.querySelector(id) as HTMLElement
 
     if (el) {
@@ -25,143 +24,83 @@ export default function Home() {
 
   }
 
+  const handleOnDrawerClick = () => {
+    setIsDrawerOpen(v => !v)
+  }
+
   return (
-    <Main>
-      <header className="laptop:min-h-screen header-bg">
-        <nav className="w-full max-w-7xl m-auto tablet:px-4 bg-white tablet:bg-transparent z-50 fixed tablet:static top-0 shadow tablet:shadow-none px-4">
-          <ul className="flex justify-between items-center tablet:hidden py-4 font-black text-xl">
-            <li className="flex-1 hover:cursor-pointer hover:text-gray-200">HOME</li>
-            <li>
-              <Link href="/login">
-                <Button>LOGIN</Button>
-              </Link>
-            </li>
-          </ul>
-          <ul className="tablet:flex py-4 tablet:pt-10 gap-2 tablet:gap-16 items-center font-black text-xl hidden">
-            <li className="flex-1 text-white hover:cursor-pointer hover:text-gray-200">
-              <div className="flex gap-4">
-                <Image src='/imgs/coffee.svg' alt="logo" width={0} height={0} className="w-10" />
-                <span>HOME</span>
-              </div>
-            </li>
-            <li className="hover:text-blue-600 hover:cursor-pointer">
-              <span onClick={() => handleMenuClick('#about')}>ABOUT</span>
-            </li>
-            <li className="hover:text-blue-600 hover:cursor-pointer">
-              <span onClick={() => handleMenuClick('#pricing')}>PRICING</span>
-            </li>
-            <li className="hover:text-blue-600 hover:cursor-pointer">
-              <span onClick={() => handleMenuClick('#contact')}>CONTACT</span>
-            </li>
-            <li>
-              <Link href="/login">
-                <Button>LOGIN</Button>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <div className="max-w-5xl tablet:px-4 m-auto relative tablet:min-h-[590px] tablet:space-y-10">
-          <div>
-            <div className="text-start mt-20 tablet:mt-24 space-y-5 p-4">
-              <h1 className="text-5xl tablet:text-7xl font-extrabold">
-                <span className="text-blue-600">#Zen</span><span className="text-purple-500">tory</span>
-              </h1>
-              <div className="text-xl tablet:text-2xl font-bold space-y-2">
-                <p>Cara baru catat Inventory, tanpa bikin Worry</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="p-4 font-medium tablet:text-lg space-y-3">
-            <div>
-              <p>Zentory membantu Kami grow lebih cepat</p>
-              <p>Karena pencatatan asset sangat rapi dan mudah!</p>
-            </div>
-            <p className="font-bold">Upin - CEO Durian Runtuh</p>
-          </div>
-        </div>
-      </header>
-
-      {/* about */}
-      <section className="bg-white tablet:py-10" id="about">
-        <div className="max-w-5xl m-auto tablet:px-4">
-          <div className="grid tablet:grid-cols-2">
-            <div className="flex justify-center bg-gray-300 tablet:bg-transparent">
-              <Image
-                src='/imgs/app.svg'
-                alt=''
-                width={0}
-                height={0}
-                className='w-[280px] py-12 tablet:w-[380px] laptop:w-[480px]'
-              />
-            </div>
-            <div className="space-y-6 p-4 mt-2">
-              <h2 className="text-3xl tablet:text-4xl laptop:text-5xl font-extrabold">About Us</h2>
-              <article className="laptop:text-lg font-normal">
-                <p>Kami adalah tim yang bersemangat dalam menciptakan solusi modern bagi para pengusaha. Dengan komitmen untuk mempermudah dan meningkatkan efisiensi bisnis, maka izinkan Kami mempersembahkan platform inovatif #Zentotory untuk Anda dan para pelaku UMKM Indonesia.</p>
-              </article>
-              <Button
-                dimension="bigger"
-                className="cursor-not-allowed"
-              >
-                SELENGKAPNYA
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* about */}
-
-      <TierSection
-        id="pricing"
-        title="Pay as You Needed"
-        description="Kami tahu, setiap bisnis punya keinginannya sendiri untuk berkambang, oleh karena itu Kami menyediakan beberapa Tier yang bisa Kamu pilih sendiri!"
-        data={TIER}
+    <Fragment>
+      <Main>
+        <HeaderSection
+          id="home"
+          title={<TitleComponent />}
+          description="Cara baru catat Inventory, tanpa bikin Worry"
+          testimonies={{
+            testimony: <TestimonyComponent />,
+            by: "Upin - CEO Durian Runtuh"
+          }}
+          menu={MENU}
+          onDrawerClick={handleOnDrawerClick}
+          onMenuClick={handleOnMenuClick}
+        />
+        <AboutSection
+          id="about"
+          title="About Us"
+          content="Kami adalah tim yang bersemangat dalam menciptakan solusi modern bagi para pengusaha. Dengan komitmen untuk mempermudah dan meningkatkan efisiensi bisnis, maka izinkan Kami mempersembahkan platform inovatif #Zentotory untuk Anda dan para pelaku UMKM Indonesia."
+          ctaButtonText="SELENGKAPNYA"
+        />
+        <TierSection
+          id="pricing"
+          title="Pay as You Needed"
+          description="Kami tahu, setiap bisnis punya keinginannya sendiri untuk berkambang, oleh karena itu Kami menyediakan beberapa Tier yang bisa Kamu pilih sendiri!"
+          data={TIER}
+          ctaButtonText="BOOK NOW"
+        />
+        <ContactSection
+          id="contact"
+          title="Contact Us"
+          formProps={{ method: "POST" }}
+          textInputProps={{
+            name: {
+              placeholder: "your name",
+              type: "text",
+              name: "name"
+            },
+            email: {
+              placeholder: "your@email.com",
+              type: "email",
+              name: "email",
+            }
+          }}
+          textAreaProps={{
+            content: {
+              rows: 4
+            }
+          }}
+          ctaButtonText="KIRIM"
+        />
+        <Footer>{footer}</Footer>
+      </Main>
+      <DrawerMenu
+        isDrawerOpen={isDrawerOpen}
+        onDrawerClick={handleOnDrawerClick}
+        onMenuClick={handleOnMenuClick}
+        menu={MENU}
       />
-
-      {/* contact */}
-      <section className="bg-white py-3 tablet:py-10" id="contact">
-        <div className="max-w-5xl m-auto">
-          <div className="grid tablet:grid-cols-2">
-            <div className="flex justify-center">
-              <Image
-                src='/imgs/cs.svg'
-                alt=''
-                width={0}
-                height={0}
-                className='hidden tablet:block tablet:w-[580px]'
-              />
-            </div>
-            <div className="space-y-6 p-4">
-              <h2 className="text-2xl tablet:text-4xl font-extrabold">Contact Us</h2>
-              <Form method="POST">
-                <TextInput
-                  placeholder="your name"
-                  type="text"
-                  name="name"
-                />
-                <TextInput
-                  placeholder="your@email.com"
-                  type="email"
-                  name="email"
-                />
-                <TextArea rows={4} />
-                <div className="flex justify-end">
-                  <Button
-                    type="button"
-                    className="cursor-not-allowed"
-                  >
-                    KIRIM
-                  </Button>
-                </div>
-              </Form>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* contact end */}
-
-      <Footer>&nbsp 2023 by www.zentory.com | All Reserved</Footer>
-    </Main>
+    </Fragment>
   )
 }
+
+const TestimonyComponent = () => (
+  <Fragment>
+    <p>Zentory membantu Kami grow lebih cepat</p>
+    <p>Karena pencatatan asset sangat rapi dan mudah!</p>
+  </Fragment>
+)
+
+const TitleComponent = () => (
+  <Fragment>
+    <span className="text-blue-600">#Zen</span><span className="text-purple-500">tory</span>
+  </Fragment>
+)
+

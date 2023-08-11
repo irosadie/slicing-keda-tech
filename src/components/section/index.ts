@@ -1,1 +1,5 @@
 export { default as TierSection } from './tier'
+export { default as AboutSection } from './about'
+export { default as ContactSection } from './contact'
+export { default as HeaderSection } from './header'
+export { default as DrawerMenu } from './drawer-menu'
