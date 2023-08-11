@@ -2,17 +2,18 @@ import { TIER } from "$/constants"
 import { FC, HTMLAttributes } from "react"
 import { Button } from "../button"
 import { Card } from "../card"
-import { CheckCircle } from "../icons"
+import { CheckCircleIcon } from "../icons"
 
 type TierSectionProps = HTMLAttributes<HTMLElement> & {
   data: typeof TIER,
   title: string,
   description: string,
+  ctaButtonText?: string,
 }
 
 const TierSection: FC<TierSectionProps> = (props) => {
 
-  const { data, title, description, ...rest } = props
+  const { data, title, description, ctaButtonText = "ORDER NOW", ...rest } = props
 
   const cards: JSX.Element[] = []
 
@@ -23,7 +24,7 @@ const TierSection: FC<TierSectionProps> = (props) => {
     value.features.map((item, index) => {
       items.push(
         <li className={item?.heighlight ? 'font-semibold flex gap-2' : 'flex gap-2'} key={index}>
-          <CheckCircle />
+          <CheckCircleIcon />
           {item?.name}
         </li>
       )
@@ -47,7 +48,7 @@ const TierSection: FC<TierSectionProps> = (props) => {
           </ul>
         </div>
         <div className="flex justify-center">
-          <Button filled className="cursor-not-allowed">BOOK NOW</Button>
+          <Button filled className="cursor-not-allowed">{ctaButtonText}</Button>
         </div>
       </Card>
     )

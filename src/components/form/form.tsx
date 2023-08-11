@@ -1,5 +1,5 @@
 
-import { FC, FormHTMLAttributes, InputHTMLAttributes } from "react"
+import { FC, FormHTMLAttributes } from "react"
 import styles from "./form.module.scss"
 
 export type FormProps = FormHTMLAttributes<HTMLFormElement>
